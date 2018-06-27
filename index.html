@@ -1,0 +1,76 @@
+<head>
+  <title>jQmV01.3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link href="~/Images/Favicon/TS3.ico" rel="shortcut icon" type="image/x-icon" />-->
+  <!--<link href="Scripts/jQueryMobile/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+	<script src="Scripts/jquery-1.10.2.min.js"></script>
+	<script src="Scripts/jQueryMobile/jquery.mobile-1.4.5.min.js"></script>-->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+  <div id="welcomePage" data-role="page" class="ui-alt-icon">
+    <div data-role="panel" data-position="right" data-display="overlay" id="menuPanel">
+      <p>Menu Items</p>
+      <a href="#btnMenuPanel" data-rel="close" class="ui-btn">Close Panel</a>
+    </div>
+    <!--end PANEL-->
+
+    <div data-id="courseName" class="ui-bar ui-bar-a" data-position="fixed">
+      <p>Brookfield Country Club</p>
+      <a id="btnMenuPanel" class="ui-btn ui-title ui-icon-carat-l ui-btn-icon-notext ui-btn-right" href="#menuPanel">Menu</a>
+    </div>
+    <!--end HEADER-->
+
+    <form id="fps">
+      <button id="btnAddToCooler" type="submit" form="fps" class="ui-btn ui-icon-plus ui-btn-corner-all" onclick="GetLocation()" value="Add to Cart">Add to Cart</button>
+      <fieldset data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+        <legend><div class="rowNoWrap spaceBetween"><span>Favorites</span></span><span>0</span></div></legend>
+        <div data-role="none" class="rowNoWrap spaceBetween centerItems">
+          <input id='_inputElementId' name='productId' class='itemQty' type='number' pattern='[0-9]*' min='0' max='9' value='5' onchange='updateItemCount()' data-item-qty='0' data-item-name='" + _prodName + "' data-item-id='" + _prodId + "' data-item-price='" + _prodPrice + "'
+          data-qty-in-this-order='0' />
+          <!--data-item-id="12" data-item-name="DuffBeer" data-item-qty="1" data-item-price="3.50" data-qty-in-this-order="0"-->
+          <!--<input id='" + _prodId + "' class='itemQty' type='number' pattern='[0-9]*' name='" + _prodId + "' min='0' max='9' value='0' onchange='updateItemCount(\"" + _prodId + "\")' data-item-qty='0' data-item-name='" + _prodName + "' data-item-id='" + _prodId + "' data-item-price='" + _prodPrice + "' data-qty-in-this-order='0' />-->
+          <button type="button" class="ui-btn ui-btn-icon-notext ui-icon-plus ui-btn-corner-all" onclick="increment()"></button>
+          <span class="flex4">Favorite #1</span>
+          <button type="button" class="ui-btn ui-btn-icon-notext ui-icon-minus ui-btn-corner-all" onclick="decrement()"></button>
+        </div>
+      </fieldset>
+      <fieldset data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+        <legend class="ui-btn ui-icon-carat-d"><span class="rowNoWrap spaceBetween"><span>Beer</span><span>0</span></span></legend>
+      </fieldset>
+      <fieldset data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+        <legend class="ui-btn ui-icon-carat-d"><div class="rowNoWrap spaceBetween"><span>Soda Pop</span><span>0</span></div></legend>
+      </fieldset>
+      <fieldset data-role="collapsible" data-mini="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+        <legend class="ui-btn ui-icon-carat-d"><div class="rowNoWrap spaceBetween"><span>Sports Drink</span><span>0</span></div></legend>
+      </fieldset>
+    </form>
+    <div data-id="footerNav" data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li>
+            <a class="ui-btn ui-nodisc-icon" data-icon="priceTag" href="Area/Products/ProductMenu"></a>
+          </li>
+          <li>
+            <a class="ui-btn ui-nodisc-icon" data-icon="blackFlag"></a>
+          </li>
+          <li>
+            <a class="ui-btn ui-nodisc-icon" data-icon="blackLightening"></a>
+          </li>
+          <li>
+            <a class="ui-btn ui-nodisc-icon" data-icon="scoreCard"></a>
+          </li>
+          <li>
+            <a class="ui-btn ui-nodisc-icon" data-icon="blackBeerCart"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
